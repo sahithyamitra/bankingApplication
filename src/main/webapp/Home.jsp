@@ -3,7 +3,7 @@
 <%@ page import="com.example.demo.model.Registration" %>
 <!DOCTYPE html>
 <html>
-<head>  
+<head>    
 <meta charset="ISO-8859-1">
 <title>Home</title>
 </head>
