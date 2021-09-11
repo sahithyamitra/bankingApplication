@@ -5,7 +5,8 @@ import javax.persistence.*;
 @Entity
 public class Balance {
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "sequ", sequenceName = "sequence3", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequ")
 	private int balanceId;
 	private long accountNum;
 	private long bankBalance;
@@ -13,22 +14,22 @@ public class Balance {
 	public String toString() {
 		return "Balance [Id=" + balanceId + ", accountNum=" + accountNum + ", bankBalance=" + bankBalance + "]";
 	}
-	public int getBalanceId() {
+	public int getbalanceId() {
 		return balanceId;
 	}
-	public void setBalanceId(int balanceId) {
+	public void setbalanceId(int balanceId) {
 		this.balanceId = balanceId;
 	}
-	public long getAccountNum() {
+	public long getaccountNum() {
 		return accountNum;
 	}
-	public void setAccountNum(long accountNum) {
+	public void setaccountNum(long accountNum) {
 		this.accountNum = accountNum;
 	}
-	public long getBankBalance() {
+	public long getbankBalance() {
 		return bankBalance;
 	}
-	public void setBankBalance(long bankBalance) {
+	public void setbankBalance(long bankBalance) {
 		this.bankBalance = bankBalance;
 	}
 }

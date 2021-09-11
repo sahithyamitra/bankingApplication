@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.DAO.BalanceDAO;
 import com.example.demo.DAO.RegistrationDAO;
+import com.example.demo.model.Balance;
 import com.example.demo.model.ChangePWD;
 import com.example.demo.model.Registration;
 
@@ -22,7 +23,6 @@ public class RegistrationController {
 	BalanceDAO bdao;
 	@Autowired
 	RegistrationDAO dao;
-	HttpSession session;
 	@RequestMapping("/")
 	public String Home()
 	{
@@ -32,15 +32,6 @@ public class RegistrationController {
 	public String addToTable(Registration r)
 	{
 		dao.save(r);
-		/*session.setAttribute("name", r.getFIRSTNAME()+" "+r.getMIDDLENAME()+" "+r.getLASTNAME());
-		session.setAttribute("mobile", r.getMOBILE());
-		session.setAttribute("email", r.getEMAIL());
-		session.setAttribute("dob", r.getDOB());
-		session.setAttribute("address", r.getDOORNO()+" "+r.getHOUSENAME()+" "+r.getSTREET()+" "+r.getAREA()+" "+r.getDISTRICT()+" "+r.getCITY()+" "+r.getCOUNTRY());
-		session.setAttribute("account", r.getACCOUNTNUM());
-		session.setAttribute("customerid", r.getCUSTOMERID());
-		session.setAttribute("pan", r.getPANCARD());
-		session.setAttribute("aadhar", r.getAADHAR());*/
 		return "Home.jsp";
 	}
 	@RequestMapping("/getCustomer")
@@ -69,24 +60,15 @@ public class RegistrationController {
 		}
 			return "wrong current password";
 	}
-	/*@RequestMapping("/checkBalance")
+	@RequestMapping("/checkBalance")
 	@ResponseBody
-	public String CheckAccBalance(Balance b)
+	public long CheckAccBalance(long accountNum)
 	{
-		if(b.getAccountNum()!=null)
+		Optional<Balance> bal=bdao.findByaccountNum(accountNum);
+		if(bal.isPresent())
 		{
-			System.out.println("inside getacc");
-			b.setBalanceId(bal++);
+			return bdao.findByBalance(accountNum);
 		}
-		if(bdao.findByAccountNum(b.getAccountNum())!=null)
-		{
-			System.out.println("inside if");
-			Balance lbal=bdao.findByBalance(b.getAccountNum());
-			if(lbal.getBankBalance()!=0)
-			{
-				return "balance"+lbal.getBankBalance();
-			}
-		}
-		return "record not found";
-	}*/
+		return 0;
+	}
 }
