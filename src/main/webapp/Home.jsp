@@ -14,5 +14,6 @@
 	<br>
 	<a href="checkBalance.jsp">Check Balance</a>
 	<br>
+	<a href="moneyTransfer.jsp">Money Transfer</a>
 </body>
 </html>

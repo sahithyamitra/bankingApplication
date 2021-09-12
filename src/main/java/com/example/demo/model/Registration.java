@@ -19,8 +19,8 @@ public class Registration {
 	private String EMAIL;
 	private String DOB; 
 	private String PANCARD;
-	private long ACCOUNTNUM;
-	private String CUSTOMERID;
+	private final long ACCOUNTNUM=654345678;
+	private final String CUSTOMERID="bank1234";
 	private long AADHAR;
 	private int DOORNO;
 	private String HOUSENAME,STREET,AREA,DISTRICT,CITY,COUNTRY;
@@ -77,14 +77,8 @@ public class Registration {
 	public long getACCOUNTNUM() {
 		return ACCOUNTNUM;
 	}
-	public void setACCOUNTNUM(long accountNum) {
-		this.ACCOUNTNUM = accountNum;
-	}
 	public String getCUSTOMERID() {
 		return CUSTOMERID;
-	}
-	public void setCUSTOMERID(String customerId) {
-		this.CUSTOMERID = customerId;
 	}
 	public long getAADHAR() {
 		return AADHAR;

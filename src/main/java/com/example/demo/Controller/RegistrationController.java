@@ -2,10 +2,13 @@ package com.example.demo.Controller;
 
 
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,9 +22,9 @@ import com.example.demo.model.Registration;
 
 @Controller
 public class RegistrationController {
+
 	@Autowired
-	BalanceDAO bdao;
-	@Autowired
+	@Qualifier("repoOne")
 	RegistrationDAO dao;
 	@RequestMapping("/")
 	public String Home()
@@ -59,16 +62,5 @@ public class RegistrationController {
 			}
 		}
 			return "wrong current password";
-	}
-	@RequestMapping("/checkBalance")
-	@ResponseBody
-	public long CheckAccBalance(long accountNum)
-	{
-		Optional<Balance> bal=bdao.findByaccountNum(accountNum);
-		if(bal.isPresent())
-		{
-			return bdao.findByBalance(accountNum);
-		}
-		return 0;
 	}
 }

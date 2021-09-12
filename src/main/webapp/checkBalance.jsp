@@ -11,7 +11,7 @@
 	<form method="post" action="checkBalance">
 	<h2>
 		<label>Enter account number:</label>
-		<input type="number" name="accountNum">
+		<input type="number" name="ACCOUNTNUMBER">
 		<br><br>
 		<input type="submit" value="SUBMIT">
 		<input type="reset" value="RESET">

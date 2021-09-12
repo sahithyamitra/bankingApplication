@@ -52,8 +52,8 @@
 		<label id="EMAIL" style="margin-left: 310px;">Valid email-id</label>
 		<label id="DOB" style="margin-left: 420px;">Date of birth</label>
 		<br>
-		<input type="number" id="MOBILE" name="MOBILE" style="margin-left: 20px">
-		<input type="email" id="EMAIL" name="EMAIL" style="margin-left: 150px">
+		<input type="number" id="MOBILE" name="MOBILE" style="margin-left: 20px" title="Must be 10digits." />
+		<input type="email" id="EMAIL" name="EMAIL" style="margin-left: 150px" title="Must be of xyz@email.com format." />
 		<input type="text" id="DOB" name="DOB" style="margin-left: 200px">
 		<label style="margin-left:1030px">[please enter in 09-jan-1000]</label>
 		<br><br>
@@ -65,8 +65,8 @@
 		<label id="CUSTOMERID" style="margin-left:420px">Customer Id</label>
 		<br>
 		<input type="text" id="PAN" name="PANCARD" style="margin-left: 20px">
-		<input type="number" id="ACCOUNTNUM" name="ACCOUNTNUM" style="margin-left: 150px">
-		<input type="text" id="CUSTOMERID" name="CUSTOMERID" style="margin-left: 200px">
+		<input type="number" id="ACCOUNTNUM" value="654345678" style="margin-left: 150px" readonly>
+		<input type="text" id="CUSTOMERID" value="bank1234" style="margin-left: 200px" readonly>
 		<br><br>
 		<label id="AADHAR" style="margin-left:100px">Aadhar Number</label>
 		<br>
@@ -100,12 +100,41 @@
 		<label id="PWD" style="margin-left:100px">PassWord</label>
 		<label id="CONFIRMPWD" style="margin-left:360px">Confirm Password</label>
 		<br>
-		<input type="password" id="PWD" name="PWD" style="margin-left: 20px">
-		<input type="password" id="CONFIRMPWD" name="CONFIRMPWD" style="margin-left: 150px">
+		<input type="password" id="PWD" name="PWD" style="margin-left: 20px" title="Minimum 8digits,it has to include one capital letter,one smal letter,one special symbol and one number atleast." />
+		<input type="password" id="CONFIRMPWD" name="CONFIRMPWD" style="margin-left: 150px" title="Must be same as Password." />
 		<br><br>
 		<hr>
-		<input type="submit" id="sub" value="SUBMIT" style="margin-left: 100px">
+		<input type="submit" id="sub" value="SUBMIT" style="margin-left: 100px" onclick="error()" />
 		<input type="reset" id="sub" value="RESET" style="margin-left: 150px">
 	</form>
 </body>
+<script>
+		function error()
+		{
+			var merror = document.getElementById("MOBILE")
+			var n=merror.toString();
+			var emailerr=document.getElementById("EMAIL");
+			var doberr=document.getElementById("DOB");
+			const Arr=doberr.split("-")
+			var pint=parseInt(Arr[2])
+			var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+	        if (n.length!=10) 
+	        {
+	  
+	            // Changing HTML to draw attention
+	            MOBILE.innerHTML = "<span style='color: red;'>"+
+	                        "Please enter a Mobile number of 10digits</span>"
+	        }
+	        else if (regexEmail.test(emailerr.value)) {
+	            EMAIL.innerHTML= "<span style='color: red;'>"+
+                "Please enter email in xyz@email.com pattern</span>"
+	        } 
+	        else if(pint>2003)
+	        	{
+	        	EMAIL.innerHTML= "<span style='color: red;'>"+
+                "invalid dob</span>"
+	        	}
+		}
+
+</script>
 </html>
