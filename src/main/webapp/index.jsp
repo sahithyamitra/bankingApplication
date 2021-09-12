@@ -1,140 +1,126 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Registration</title>
 <style>
-		input{
-			width: 20%;
-			outline-style: double;
-		}
-		.bank{
-			font-size:30px;
-			color:#B71C1C;
-		}
-		body
-		{
-			background-image: url("piggy2.jpg");
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-		h1,h2{
-			margin-left: 100px;
-			text-align: center;
-		}
-		#sub{
-			color: aliceblue;
-			background-color: #0d6efd;
-		}
-		a{
-			margin-left: 800px;
-		}
-	</style>
+input {
+	width: 20%;
+	outline-style: double;
+}
+
+.bank {
+	font-size: 30px;
+	color: #B71C1C;
+}
+
+body {
+	background-image: url("piggy2.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h1, h2 {
+	margin-left: 100px;
+	text-align: center;
+}
+
+#sub {
+	color: aliceblue;
+	background-color: #0d6efd;
+}
+
+a {
+	margin-left: 800px;
+}
+</style>
 </head>
 <body>
 	<h1>The Bank</h1>
 	<h2>New User Registration</h2>
-	<label style="font-size: 28px;"><strong>Personal Information</strong></label>
-	<label><a href="Login.jsp" style="margin-left:1000px">Login instead?</a></label>
+	<label style="font-size: 28px;"><strong>Personal
+			Information</strong></label>
+	<label><a href="Login.jsp" style="margin-left: 1000px">Login
+			instead?</a></label>
 	<hr>
 	<form method="post" action="postDetails">
-		<label id="FIRSTNAME" style="margin-left: 100px;"><strong>First Name<strong></label>
-		<label id="MIDDLENAME" style="margin-left: 420px;"><strong>Middle Name</strong></label>
-		<label id="LASTNAME" style="margin-left: 420px;"><strong>Last Name</strong></label>
-		<br>
-		<input type="text" id="FIRSTNAME" name="FIRSTNAME" style="margin-left: 20px;">
-		<input type="text" id="MIDDLENAME" name="MIDDLENAME" style="margin-left: 150px">
-		<input type="text" id="LASTNAME" name="lASTNAME" style="margin-left: 200px">
-		<br><br>
-		<label id="MOBILE" style="margin-left: 100px;">Registered Mobile Number</label>
-		<label id="EMAIL" style="margin-left: 310px;">Valid email-id</label>
-		<label id="DOB" style="margin-left: 420px;">Date of birth</label>
-		<br>
-		<input type="number" id="MOBILE" name="MOBILE" style="margin-left: 20px" title="Must be 10digits." />
-		<input type="email" id="EMAIL" name="EMAIL" style="margin-left: 150px" title="Must be of xyz@email.com format." />
-		<input type="text" id="DOB" name="DOB" style="margin-left: 200px">
-		<label style="margin-left:1030px">[please enter in 09-jan-1000]</label>
-		<br><br>
-		<br>
-		<label style="font-size: 28px;"><strong>Bank Details</strong></label>
+		<label id="FIRSTNAME" style="margin-left: 100px;"><strong>First
+				Name<strong></label> <label id="MIDDLENAME"
+			style="margin-left: 420px;"><strong>Middle Name</strong></label> <label
+			id="LASTNAME" style="margin-left: 420px;"><strong>Last
+				Name</strong></label> <br> <input type="text" id="FIRSTNAME" name="FIRSTNAME"
+			style="margin-left: 20px;"> <input type="text"
+			id="MIDDLENAME" name="MIDDLENAME" style="margin-left: 150px">
+		<input type="text" id="LASTNAME" name="lASTNAME"
+			style="margin-left: 200px"> <br>
+		<br> <label id="MOBILE" style="margin-left: 100px;">Registered
+			Mobile Number</label> <label id="EMAIL" style="margin-left: 310px;">Valid
+			email-id</label> <label id="DOB" style="margin-left: 420px;">Date of
+			birth</label> <br> <input type="number" id="MOBILE" name="MOBILE"
+			style="margin-left: 20px" title="Must be 10digits." /> <input
+			type="email" id="EMAIL" name="EMAIL" style="margin-left: 150px"
+			title="Must be of xyz@email.com format." /> <input type="text"
+			id="DOB" name="DOB" style="margin-left: 200px"> <label
+			style="margin-left: 1030px">[please enter in 09-jan-1000]</label> <br>
+		<br> <br> <label style="font-size: 28px;"><strong>Bank
+				Details</strong></label>
 		<hr>
-		<label id="PAN" style="margin-left:100px">Pan Number</label>
-		<label id="ACCOUNTNUM" style="margin-left:310px">Account Number</label>
-		<label id="CUSTOMERID" style="margin-left:420px">Customer Id</label>
-		<br>
+		<label id="PAN" style="margin-left: 100px">Pan Number</label> 
+		<label for="ACCOUNTNUM" style="margin-left: 420px">Account Number</label>
+		<label for="CUSTOMERID" style="margin-left: 420px">Customer Id</label>
 		<input type="text" id="PAN" name="PANCARD" style="margin-left: 20px">
-		<input type="number" id="ACCOUNTNUM" value="654345678" style="margin-left: 150px" readonly>
-		<input type="text" id="CUSTOMERID" value="bank1234" style="margin-left: 200px" readonly>
-		<br><br>
-		<label id="AADHAR" style="margin-left:100px">Aadhar Number</label>
+		<input type="number" id="ACCOUNTNUM" name="ACCOUNTNUM" style="margin-left: 150px" readonly>
+		<input type="text" id="CUSTOMERID" name="CUSTOMERID" style="margin-left: 200px" readonly>
 		<br>
-		<input type="number" id="AADHAR" name="AADHAR" style="margin-left: 20px">
-		<br>
-		<br>
-		<label style="font-size: 28px;"><strong>Address</strong></label>
+		<br> <label id="AADHAR" style="margin-left: 100px">Aadhar
+			Number</label> <br> <input type="number" id="AADHAR" name="AADHAR"
+			style="margin-left: 20px"> <br> <br> <label
+			style="font-size: 28px;"><strong>Address</strong></label>
 		<hr>
-		<label id="DOORNO" style="margin-left:100px">House Number</label>
-		<label id="HOUSENAME" style="margin-left:360px">House Name</label>
-		<label id="STREET" style="margin-left:420px">Street</label>
-		<br>
-		<input type="number" id="DOORNO" name="DOORNO" style="margin-left: 20px">
-		<input type="text" id="HOUSENAME" name="HOUSENAME" style="margin-left: 150px">
-		<input type="text" id="STREET" name="STREET" style="margin-left: 200px">
-		<br><br>
-		<label id="AREA" style="margin-left:100px">Area</label>
-		<label id="DISTRICT" style="margin-left:450px">District</label>
-		<label id="CITY" style="margin-left:440px">City</label>
-		<br>
-		<input type="text" id="AREA" name="AREA" style="margin-left: 20px">
-		<input type="text" id="DISTRICT" name="DISTRICT" style="margin-left: 150px">
-		<input type="text" id="CITY" name="CITY" style="margin-left: 200px">
-		<br><br>
-		<label id="COUNTRY" style="margin-left:100px">Country</label>
-		<br>
-		<input type="text" id="COUNTRY" name="COUNTRY" style="margin-left: 20px">
-		<br><br>
-		<label style="font-size: 28px;"><strong>Password</strong></label>
+		<label id="DOORNO" style="margin-left: 100px">House Number</label> <label
+			id="HOUSENAME" style="margin-left: 360px">House Name</label> <label
+			id="STREET" style="margin-left: 420px">Street</label> <br> <input
+			type="number" id="DOORNO" name="DOORNO" style="margin-left: 20px">
+		<input type="text" id="HOUSENAME" name="HOUSENAME"
+			style="margin-left: 150px"> <input type="text" id="STREET"
+			name="STREET" style="margin-left: 200px"> <br>
+		<br> <label id="AREA" style="margin-left: 100px">Area</label> <label
+			id="DISTRICT" style="margin-left: 450px">District</label> <label
+			id="CITY" style="margin-left: 440px">City</label> <br> <input
+			type="text" id="AREA" name="AREA" style="margin-left: 20px">
+		<input type="text" id="DISTRICT" name="DISTRICT"
+			style="margin-left: 150px"> <input type="text" id="CITY"
+			name="CITY" style="margin-left: 200px"> <br>
+		<br> <label id="COUNTRY" style="margin-left: 100px">Country</label>
+		<br> <input type="text" id="COUNTRY" name="COUNTRY"
+			style="margin-left: 20px"> <br>
+		<br> <label style="font-size: 28px;"><strong>Password</strong></label>
 		<hr>
-		<label id="PWD" style="margin-left:100px">PassWord</label>
-		<label id="CONFIRMPWD" style="margin-left:360px">Confirm Password</label>
-		<br>
-		<input type="password" id="PWD" name="PWD" style="margin-left: 20px" title="Minimum 8digits,it has to include one capital letter,one smal letter,one special symbol and one number atleast." />
-		<input type="password" id="CONFIRMPWD" name="CONFIRMPWD" style="margin-left: 150px" title="Must be same as Password." />
-		<br><br>
+		<label id="PWD" style="margin-left: 100px">PassWord</label> <label
+			id="CONFIRMPWD" style="margin-left: 360px">Confirm Password</label> <br>
+		<input type="password" id="PWD" name="PWD" style="margin-left: 20px"
+			title="Minimum 8digits,it has to include one capital letter,one smal letter,one special symbol and one number atleast." />
+		<input type="password" id="CONFIRMPWD" name="CONFIRMPWD"
+			style="margin-left: 150px" title="Must be same as Password." /> <br>
+		<br> 
 		<hr>
-		<input type="submit" id="sub" value="SUBMIT" style="margin-left: 100px" onclick="error()" />
-		<input type="reset" id="sub" value="RESET" style="margin-left: 150px">
+		<input type="submit" id="sub" value="SUBMIT"
+			style="margin-left: 100px" onclick="error()" /> <input type="reset"
+			id="sub" value="RESET" style="margin-left: 150px">
 	</form>
-</body>
-<script>
-		function error()
-		{
-			var merror = document.getElementById("MOBILE")
-			var n=merror.toString();
-			var emailerr=document.getElementById("EMAIL");
-			var doberr=document.getElementById("DOB");
-			const Arr=doberr.split("-")
-			var pint=parseInt(Arr[2])
-			var regexEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
-	        if (n.length!=10) 
-	        {
-	  
-	            // Changing HTML to draw attention
-	            MOBILE.innerHTML = "<span style='color: red;'>"+
-	                        "Please enter a Mobile number of 10digits</span>"
-	        }
-	        else if (regexEmail.test(emailerr.value)) {
-	            EMAIL.innerHTML= "<span style='color: red;'>"+
-                "Please enter email in xyz@email.com pattern</span>"
-	        } 
-	        else if(pint>2003)
-	        	{
-	        	EMAIL.innerHTML= "<span style='color: red;'>"+
-                "invalid dob</span>"
-	        	}
-		}
+	<script type="text/javascript">
+		function customerID() {
 
-</script>
+			return Math.floor((Math.random() * 1000) + 1);
+		}
+		function accountNum() {
+
+			return Math.floor((Math.random() * 1000000) + 1);
+		}
+		document.getElementById('CUSTOMERID').value = customerID();
+		document.getElementById('ACCOUNTNUM').value = accountNum();
+	</script>
+</body>
 </html>

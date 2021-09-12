@@ -2,8 +2,7 @@ package com.example.demo.Controller;
 
 
 import java.util.Optional;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Scanner;
 
 import javax.servlet.http.HttpSession;
 
@@ -13,10 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-import com.example.demo.DAO.BalanceDAO;
 import com.example.demo.DAO.RegistrationDAO;
-import com.example.demo.model.Balance;
 import com.example.demo.model.ChangePWD;
 import com.example.demo.model.Registration;
 
@@ -32,8 +28,21 @@ public class RegistrationController {
 		return "index.jsp";
 	}
 	@RequestMapping("/postDetails")
-	public String addToTable(Registration r)
+	public String addToTable(Registration r,HttpSession session)
 	{
+		session.setAttribute("name", r.getFIRSTNAME()+" "+r.getMIDDLENAME()+" "+r.getLASTNAME());
+		session.setAttribute("mobile", r.getMOBILE());
+		session.setAttribute("email", r.getEMAIL());
+		session.setAttribute("dob", r.getDOB());
+		session.setAttribute("pan", r.getPANCARD());
+		session.setAttribute("aadhar", r.getAADHAR());
+		session.setAttribute("accountnum", r.getACCOUNTNUM());
+		session.setAttribute("customerid",r.getCUSTOMERID());
+		session.setAttribute("address",r.getDOORNO()+" "+r.getHOUSENAME()+" "+r.getSTREET()+" "+r.getAREA()+" "+r.getCITY()+" "+r.getCOUNTRY());
+		if(r.getPWD().equals(r.getCONFIRMPWD())==false)
+		{
+			return "error.jsp";
+		}
 		dao.save(r);
 		return "Home.jsp";
 	}

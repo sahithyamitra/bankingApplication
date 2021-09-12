@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.util.Scanner;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,13 +21,19 @@ public class Registration {
 	private String EMAIL;
 	private String DOB; 
 	private String PANCARD;
-	private final long ACCOUNTNUM=654345678;
-	private final String CUSTOMERID="bank1234";
+	private long ACCOUNTNUM;
+	private String CUSTOMERID;
 	private long AADHAR;
 	private int DOORNO;
 	private String HOUSENAME,STREET,AREA,DISTRICT,CITY,COUNTRY;
 	private String PWD;
 	private String CONFIRMPWD;
+	public void setACCOUNTNUM(long accountNum) {
+		this.ACCOUNTNUM=accountNum;
+	}
+	public void setCUSTOMERID(String cUSTOMERID) {
+		this.CUSTOMERID=cUSTOMERID;
+	}
 	public int getREGID() {
 		return REGID;
 	}
