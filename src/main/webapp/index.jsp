@@ -46,18 +46,18 @@ a {
 			instead?</a></label>
 	<hr>
 	<form method="post" action="postDetails">
-		<label id="FIRSTNAME" style="margin-left: 100px;"><strong>First
-				Name<strong></label> <label id="MIDDLENAME"
+		<label for="FIRSTNAME" style="margin-left: 100px;"><strong>First
+				Name<strong></label> <label for="MIDDLENAME"
 			style="margin-left: 420px;"><strong>Middle Name</strong></label> <label
-			id="LASTNAME" style="margin-left: 420px;"><strong>Last
+			for="LASTNAME" style="margin-left: 420px;"><strong>Last
 				Name</strong></label> <br> <input type="text" id="FIRSTNAME" name="FIRSTNAME"
 			style="margin-left: 20px;"> <input type="text"
 			id="MIDDLENAME" name="MIDDLENAME" style="margin-left: 150px">
 		<input type="text" id="LASTNAME" name="lASTNAME"
 			style="margin-left: 200px"> <br>
-		<br> <label id="MOBILE" style="margin-left: 100px;">Registered
-			Mobile Number</label> <label id="EMAIL" style="margin-left: 310px;">Valid
-			email-id</label> <label id="DOB" style="margin-left: 420px;">Date of
+		<br> <label for="MOBILE" style="margin-left: 100px;">Registered
+			Mobile Number</label> <label for="EMAIL" style="margin-left: 310px;">Valid
+			email-id</label> <label for="DOB" style="margin-left: 420px;">Date of
 			birth</label> <br> <input type="number" id="MOBILE" name="MOBILE"
 			style="margin-left: 20px" title="Must be 10digits." /> <input
 			type="email" id="EMAIL" name="EMAIL" style="margin-left: 150px"
@@ -80,26 +80,26 @@ a {
 			style="font-size: 28px;"><strong>Address</strong></label>
 		<hr>
 		<label id="DOORNO" style="margin-left: 100px">House Number</label> <label
-			id="HOUSENAME" style="margin-left: 360px">House Name</label> <label
-			id="STREET" style="margin-left: 420px">Street</label> <br> <input
+			for="HOUSENAME" style="margin-left: 360px">House Name</label> <label
+			for="STREET" style="margin-left: 420px">Street</label> <br> <input
 			type="number" id="DOORNO" name="DOORNO" style="margin-left: 20px">
 		<input type="text" id="HOUSENAME" name="HOUSENAME"
 			style="margin-left: 150px"> <input type="text" id="STREET"
 			name="STREET" style="margin-left: 200px"> <br>
-		<br> <label id="AREA" style="margin-left: 100px">Area</label> <label
-			id="DISTRICT" style="margin-left: 450px">District</label> <label
-			id="CITY" style="margin-left: 440px">City</label> <br> <input
+		<br> <label for="AREA" style="margin-left: 100px">Area</label> <label
+			for="DISTRICT" style="margin-left: 450px">District</label> <label
+			for="CITY" style="margin-left: 440px">City</label> <br> <input
 			type="text" id="AREA" name="AREA" style="margin-left: 20px">
 		<input type="text" id="DISTRICT" name="DISTRICT"
 			style="margin-left: 150px"> <input type="text" id="CITY"
 			name="CITY" style="margin-left: 200px"> <br>
-		<br> <label id="COUNTRY" style="margin-left: 100px">Country</label>
+		<br> <label for="COUNTRY" style="margin-left: 100px">Country</label>
 		<br> <input type="text" id="COUNTRY" name="COUNTRY"
 			style="margin-left: 20px"> <br>
 		<br> <label style="font-size: 28px;"><strong>Password</strong></label>
 		<hr>
-		<label id="PWD" style="margin-left: 100px">PassWord</label> <label
-			id="CONFIRMPWD" style="margin-left: 360px">Confirm Password</label> <br>
+		<label for="PWD" style="margin-left: 100px">PassWord</label> <label
+			for="CONFIRMPWD" style="margin-left: 360px">Confirm Password</label> <br>
 		<input type="password" id="PWD" name="PWD" style="margin-left: 20px"
 			title="Minimum 8digits,it has to include one capital letter,one smal letter,one special symbol and one number atleast." />
 		<input type="password" id="CONFIRMPWD" name="CONFIRMPWD"

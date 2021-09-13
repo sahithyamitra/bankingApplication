@@ -34,6 +34,7 @@ input{
 	width: 500px;
 	height: 30px;
 }
+
 </style>
 </head>
 <body>
@@ -43,7 +44,7 @@ input{
 	<label id="cid">CUSTOMER ID</label><br>
 	<input type="text" id="cid" name="CUSTOMERID"><br>
 	<label id="pwd">PASSWORD</label><br>
-	<input type="text" id="pwd" name="PWD"><br>
+	<input type="password" id="pwd" name="PWD"><br>
 	<br>
 	<a href="password.html" style="color:darkblue">Forgot password</a>
 	<hr>

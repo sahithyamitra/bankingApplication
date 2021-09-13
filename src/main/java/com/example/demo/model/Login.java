@@ -1,13 +1,36 @@
 package com.example.demo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+
+import org.springframework.stereotype.Component;
+
+@Entity
+@Component
 public class Login {
-	private String CUSTOMERID;
+	@Id
+	@SequenceGenerator(name = "seqgen3", sequenceName = "sequence3", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqgen3")
+	private int LOGINID;
+	@Column(name="CUSTID",unique=true,insertable=true,updatable=true)
+	private String CUSTID;
+	@Column(name="PWD",insertable=true,updatable=true)
 	private String PWD;
-	public String getCUSTOMERID() {
-		return CUSTOMERID;
+	public int getLOGINID() {
+		return LOGINID;
 	}
-	public void setCUSTOMERID(String cUSTOMERID) {
-		CUSTOMERID = cUSTOMERID;
+	public void setLOGINID(int lOGINID) {
+		LOGINID = lOGINID;
+	}
+	public String getCUSTID() {
+		return CUSTID;
+	}
+	public void setCUSTID(String cUSTOMERID) {
+		CUSTID = cUSTOMERID;
 	}
 	public String getPWD() {
 		return PWD;
@@ -17,6 +40,6 @@ public class Login {
 	}
 	@Override
 	public String toString() {
-		return "LogIn [customerId=" + CUSTOMERID + ", pwd=" + PWD + "]";
+		return "Login [LOGINID=" + LOGINID + ", CUSTOMERID=" + CUSTID + ", PWD=" + PWD + "]";
 	}
 }

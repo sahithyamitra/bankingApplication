@@ -7,12 +7,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Transient;
 
 @Entity
 public class Registration {
 	@Id
-	@SequenceGenerator(name = "seq", sequenceName = "sequence2", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+	@SequenceGenerator(name = "seqgen1", sequenceName = "sequence1", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqgen1")
 	private int REGID;
 	private String FIRSTNAME;
 	private String MIDDLENAME;
@@ -27,7 +28,8 @@ public class Registration {
 	private int DOORNO;
 	private String HOUSENAME,STREET,AREA,DISTRICT,CITY,COUNTRY;
 	private String PWD;
-	private String CONFIRMPWD;
+	@Transient
+	private transient String CONFIRMPWD;
 	public void setACCOUNTNUM(long accountNum) {
 		this.ACCOUNTNUM=accountNum;
 	}
@@ -151,10 +153,10 @@ public class Registration {
 	@Override
 	public String toString() {
 		return "Registration [REGID=" + REGID + ", FIRSTNAME=" + FIRSTNAME + ", MIDDLENAME=" + MIDDLENAME
-				+ ", LASTNAME=" + LASTNAME + ", MOBILE=" + MOBILE + ", EMAIL=" + EMAIL + ", DOB=" + DOB
-				+ ", PANCARD=" + PANCARD + ", ACCOUNTNUM=" + ACCOUNTNUM + ", CUSTOMERID=" + CUSTOMERID + ", AADHAR="
-				+ AADHAR + ", DOORNO=" + DOORNO + ", HOUSENAME=" + HOUSENAME + ", STREET=" + STREET + ", AREA="
-				+ AREA + ", DISTRICT=" + DISTRICT + ", CITY=" + CITY + ", COUNTRY=" + COUNTRY + ", PWD=" + PWD
+				+ ", LASTNAME=" + LASTNAME + ", MOBILE=" + MOBILE + ", EMAIL=" + EMAIL + ", DOB=" + DOB + ", PANCARD="
+				+ PANCARD + ", ACCOUNTNUM=" + ACCOUNTNUM + ", CUSTOMERID=" + CUSTOMERID + ", AADHAR=" + AADHAR
+				+ ", DOORNO=" + DOORNO + ", HOUSENAME=" + HOUSENAME + ", STREET=" + STREET + ", AREA=" + AREA
+				+ ", DISTRICT=" + DISTRICT + ", CITY=" + CITY + ", COUNTRY=" + COUNTRY + ", PWD=" + PWD
 				+ ", CONFIRMPWD=" + CONFIRMPWD + "]";
 	}
 }

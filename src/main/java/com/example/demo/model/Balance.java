@@ -8,12 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
 @Entity
 @Table(name="BALANCE")
+@Component
 public class Balance {
 	@Id
-	@SequenceGenerator(name = "sequen", sequenceName = "sequence3", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequen")
+	@SequenceGenerator(name = "seqgen2", sequenceName = "sequence2", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqgen2")
 	@Column(name="BALID")
 	private int BALID;
 	@Column(name="ACCOUNTNUMBER",unique=true,insertable=true,updatable=true)

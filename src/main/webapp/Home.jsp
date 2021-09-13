@@ -19,11 +19,18 @@ font-size:20px;
   width: 200px;
   height: 120px;	
 	}
+	.logout{
+	 position: absolute;
+  right: 90px;
+	}
 </style>
 </head>
 <body>
 	<h1>Welcome! <%= session.getAttribute("name") %></h1>
 	<h2>The DETAILS ARE</h2>
+	<div>
+		<a href="index.jsp" class="logout">Log Out</a><br>
+	</div>
 	<div class="links">
 		<a href="changePWD.jsp">Change password</a>
 		<br>
